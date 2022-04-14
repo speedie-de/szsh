@@ -1,3 +1,3 @@
-PS1col="[%{$fg[blue]%n%{$fg[yellow]@%{$fg[magenta]%m% %{$fg[red] %~]%{$reset_color%}% $ "
-export PS1=$PS1col
+PS1col="[%{$fg[cyan]%n%{$fg[yellow]@%{$fg[magenta]%m% %{$fg[red] %~%{$reset_color%}]$ "
+export PS1="$PS1col"
 
