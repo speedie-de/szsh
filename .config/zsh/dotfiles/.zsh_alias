@@ -5,24 +5,19 @@ alias w='$BROWSER https://searx.org'
 # Editor aliases
 alias vi=$EDITOR
 alias nvim=$EDITOR
+alias vim=$EDITOR
 alias :e=$EDITOR
 alias e=$EDITOR
 alias :de="$PERM $EDITOR"
 alias de="$PERM $EDITOR"
-
-# sudo/doas aliases
-alias sudo=$PERM
-alias :r=$PERM
+alias sudo='$PERM'
+alias doas='$PERM'
 
 # fetch aliases
 alias btw=$FETCH
 
-# other
-alias yt='ytfzf'
-
 # ls aliases
 alias ls='$LIST -lah --color=auto'
-alias mix=$MIXER
 
 # get aliases
 alias getsfetch='rm sfetch ; curl -o sfetch https://raw.githubusercontent.com/speediegamer/sfetch/main/sfetch && chmod +x sfetch'
@@ -51,22 +46,10 @@ alias :q='exit'
 alias q='exit'
 alias :c='clear'
 
-# Package manager aliases
-alias emerge='doas emerge'
-
-# make aliases
-alias make='make -j$(nproc)'
-
-# application
-alias rss='killall mpv ; killall newsboat ; newsboat'
-
-# Mount commands
-alias mnt='$PERM mount /dev/'
-
 # Process aliases
 alias kys='$PERM killall dwm'
 
-# "mk" aliases
+# mk-
 alias mkexec='chmod +x'
 alias mkdir='mkdir -pv'
 
@@ -79,6 +62,9 @@ alias urls='$EDITOR ~/.config/newsboat/urls'
 alias bashrc='$EDITOR ~/.bashrc'
 alias zshrc='$EDITOR $ZDOTDIR/.zshrc'
 alias makeconf='$PERM $EDITOR /etc/portage/make.conf'
+alias dwmconfig='$PERM $EDITOR ~/.config/dwm/config.def.h'
+alias stconfig='$PERM $EDITOR ~/.config/st/config.def.h'
+alias slstatusconfig='$PERM $EDITOR ~/.config/slstatus/config.def.h'
 
 # Basic cd aliases
 alias ..='cd ..'
@@ -98,10 +84,8 @@ alias golocal="cd /usr/local/bin"
 alias gorec="cd ~/OBS\ \Recordings"
 alias goproj="cd ~/Projects"
 
-# Funny aliases
-alias winget='echo "That OS is so 1984"'
-
 # Extraction aliases
 alias untar='$PERM tar xpvf'
 alias unrar='$PERM unrar x'
+
 #######################################################
