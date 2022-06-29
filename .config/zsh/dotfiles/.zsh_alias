@@ -1,79 +1,46 @@
-# Web browser aliases
-alias :w='$BROWSER'
-alias w='$BROWSER https://searx.org'
+# Aliases
 
-# Editor aliases
-alias vi=$EDITOR
-alias nvim=$EDITOR
-alias vim=$EDITOR
-alias :e=$EDITOR
-alias e=$EDITOR
-alias :de="$PERM $EDITOR"
-alias de="$PERM $EDITOR"
-alias sudo='$PERM'
-alias doas='$PERM'
+alias sudo=$PERM
+alias doas=$PERM
+alias rootdo=$PERM
 
-# fetch aliases
-alias btw=$FETCH
+case "$LIST" in
+"exa") alias ls='$LIST -lah --color=auto --icons' ;;
+"ls") alias ls='$LIST -lah --colors=auto' ;;
+esac
 
-# ls aliases
-alias ls='$LIST -lah --color=auto'
-
-# get aliases
-alias getsfetch='rm sfetch ; curl -o sfetch https://raw.githubusercontent.com/speediegamer/sfetch/main/sfetch && chmod +x sfetch'
-alias getconfig='git clone https://github.com/speediegamer/configurations'
-alias getspderesources='rm spDE-resources ; git clone https://github.com/speediegamer/spDE-resources'
-alias getspde='rm spDE ; git clone https://github.com/speediegamer/spDE'
-alias getp081='rm p081 ; git clone https://github.com/p081/project081'
-
-# package installation/removal aliases
-alias :i=$PKGINSTALL
-alias :iu=$PKGREMOVE
-alias :id=$PKGCLEAN
-
-# list aliases
-alias :l='$LIST -lah --color=auto'
 alias ll='$LIST -lah | wc -l'
-alias :lb=$LISTDEVICE
-alias :ld=$DEVICEINFO
 
-# mixer aliases
-alias :a=$MIXER
-
-# General terminal command aliases
 alias Q='exit'
 alias :q='exit'
 alias q='exit'
+alias ZZ='exit'
+alias ZQ='exit'
 alias :c='clear'
 
-# Process aliases
-alias kys='$PERM killall dwm'
+alias emerge="$PERM emerge"
 
-# mk-
-alias mkexec='chmod +x'
+alias rss='killall mpv ; killall newsboat ; newsboat'
+
+# File management
 alias mkdir='mkdir -pv'
 
-# youtube-dl/yt-dlp aliases
+# youtube-dl aliases
 alias mp3dl='$PERM youtube-dl -x --audio-format mp3 --prefer-ffmpeg'
 alias mp4dl='$PERM youtube-dl -f best --prefer-ffmpeg'
 
-# File aliases
+# Config files
 alias urls='$EDITOR ~/.config/newsboat/urls'
-alias bashrc='$EDITOR ~/.bashrc'
 alias zshrc='$EDITOR $ZDOTDIR/.zshrc'
 alias makeconf='$PERM $EDITOR /etc/portage/make.conf'
-alias dwmconfig='$PERM $EDITOR ~/.config/dwm/config.def.h'
-alias stconfig='$PERM $EDITOR ~/.config/st/config.def.h'
-alias slstatusconfig='$PERM $EDITOR ~/.config/slstatus/config.def.h'
 
-# Basic cd aliases
+# cd aliases
 alias ..='cd ..'
 alias .2='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-# "GO" aliases
 alias goconfig="cd ~/.config"
 alias godl="cd ~/Downloads"
 alias gostor="cd /mnt/storage01"
@@ -81,11 +48,10 @@ alias gostor2="cd /mnt/storage02"
 alias gobin="cd /usr/bin"
 alias gohome="cd ~/"
 alias golocal="cd /usr/local/bin"
-alias gorec="cd ~/OBS\ \Recordings"
+alias gorec="cd ~/Videos"
 alias goproj="cd ~/Projects"
 
-# Extraction aliases
 alias untar='$PERM tar xpvf'
 alias unrar='$PERM unrar x'
 
-#######################################################
+alias df='df -h'
