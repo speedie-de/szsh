@@ -3,9 +3,12 @@
 
 # Features
 autoload -U colors && colors
+autoload -U compinit promptinit
 autoload -Uz compinit
-zmodload
+promptinit; prompt gentoo
+zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*' menu select
+zmodload
 compinit
 _comp_options+=(globdots)
 export HISTSIZE=100
@@ -20,12 +23,11 @@ source $ZDOTDIR/.zsh_ps
 source $ZDOTDIR/.zsh_alias
 
 # Plugins
-source $ZPLUGINDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZPLUGINDIR/zsh-vi-mode/zsh-vi-mode.zsh
 source $ZPLUGINDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZPLUGINDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #######################################################
 cd && clear
 
 $FETCH
-

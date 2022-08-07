@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd .config
+rm -rf zsh
+cp -r $HOME/.config/zsh .
+cd ..
+git add *
+git commit -a -m "Add new based zsh config"
+git push

@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # -------------------------------------------------------------------------------------------------
 # Copyright (c) 2010-2011 zsh-syntax-highlighting contributors
 # All rights reserved.
@@ -30,5 +31,5 @@
 BUFFER='azertyuiop'
 
 expected_region_highlight=(
-  "1  10  unknown-token" # azertyuiop
+  "1  10  $ZSH_HIGHLIGHT_STYLES[unknown-token]" # azertyuiop
 )

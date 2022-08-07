@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # -------------------------------------------------------------------------------------------------
 # Copyright (c) 2015 zsh-syntax-highlighting contributors
 # All rights reserved.
@@ -31,7 +32,6 @@ PREBUFFER=$'echo "foo1\n'
 BUFFER='foo2" ./'
 
 expected_region_highlight=(
-  "1 5 default" # 'foo2"'
-  "1 5 double-quoted-argument" # 'foo2"'
-  "7 8 path" # './'
+  "0 5 $ZSH_HIGHLIGHT_STYLES[double-quoted-argument]" # 'foo2"'
+  "7 8 $ZSH_HIGHLIGHT_STYLES[path]" # './'
 )

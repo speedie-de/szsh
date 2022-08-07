@@ -4,11 +4,9 @@ alias sudo=$PERM
 alias doas=$PERM
 alias rootdo=$PERM
 
-case "$LIST" in
-"exa") alias ls='$LIST -lah --color=auto --icons' ;;
-"ls") alias ls='$LIST -lah --colors=auto' ;;
-esac
-
+# ls aliases
+alias ls='$LIST -lah --color=auto --icons' # exa
+#alias ls='$LIST -lah --colors=auto' # ls
 alias ll='$LIST -lah | wc -l'
 
 alias Q='exit'
@@ -19,6 +17,7 @@ alias ZQ='exit'
 alias :c='clear'
 
 alias emerge="$PERM emerge"
+alias emerge-update="$PERM emerge --sync && $PERM emerge --deep --newuse --update --with-bdeps=y @world"
 
 alias rss='killall mpv ; killall newsboat ; newsboat'
 
@@ -32,6 +31,9 @@ alias mp4dl='$PERM youtube-dl -f best --prefer-ffmpeg'
 # Config files
 alias urls='$EDITOR ~/.config/newsboat/urls'
 alias zshrc='$EDITOR $ZDOTDIR/.zshrc'
+alias zprofile='$EDITOR ~/.zprofile'
+alias zshalias='$EDITOR $ZDOTDIR/.zsh_alias'
+alias zshexport='$EDITOR $ZDOTDIR/.zsh_export'
 alias makeconf='$PERM $EDITOR /etc/portage/make.conf'
 
 # cd aliases
@@ -48,7 +50,7 @@ alias gostor2="cd /mnt/storage02"
 alias gobin="cd /usr/bin"
 alias gohome="cd ~/"
 alias golocal="cd /usr/local/bin"
-alias gorec="cd ~/Videos"
+alias gorec="cd ~/Recordings"
 alias goproj="cd ~/Projects"
 
 alias untar='$PERM tar xpvf'

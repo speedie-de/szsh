@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # -------------------------------------------------------------------------------------------------
 # Copyright (c) 2015 zsh-syntax-highlighting contributors
 # All rights reserved.
@@ -28,12 +29,12 @@
 # -------------------------------------------------------------------------------------------------
 
 PREBUFFER=$'echo foo; echo bar\n\n\n'
-BUFFER=' echo baz; echo qux'
+BUFFER='echo baz; echo qux'
 
 expected_region_highlight=(
-  "2 5 builtin" # echo
-  "7 9 default" # baz
-  "10 10 commandseparator" # semicolon
-  "12 15 builtin" # echo
-  "17 19 default" # qux
+  "0 4 $ZSH_HIGHLIGHT_STYLES[builtin]" # echo
+  "5 7 $ZSH_HIGHLIGHT_STYLES[default]" # baz
+  "8 9 $ZSH_HIGHLIGHT_STYLES[default]" # semicolon
+  "11 14 $ZSH_HIGHLIGHT_STYLES[builtin]" # echo
+  "16 18 $ZSH_HIGHLIGHT_STYLES[default]" # qux
 )

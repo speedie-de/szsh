@@ -1,5 +1,6 @@
+#!/usr/bin/env zsh
 # -------------------------------------------------------------------------------------------------
-# Copyright (c) 2015 zsh-syntax-highlighting contributors
+# Copyright (c) 2010-2011 zsh-syntax-highlighting contributors
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -27,16 +28,12 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-BUFFER='>/tmp >/tmp command echo >/tmp foo'
+BUFFER='>/tmp >/tmp sudo echo foo'
 
 expected_region_highlight=(
-  "1  1  redirection" # >
-  "2  5  path"       # /tmp
-  "7  7  redirection" # >
-  "8  11 path"       # /tmp
-  "13 19 precommand" # command
-  "21 24 builtin"    # echo
-  "26 26 redirection" # >
-  "27 30 path"       # /tmp
-  "32 34 default"    # foo
+  "2  5  $ZSH_HIGHLIGHT_STYLES[path]"       # /tmp
+  "7  11 $ZSH_HIGHLIGHT_STYLES[path]"       # /tmp
+  "13 16 $ZSH_HIGHLIGHT_STYLES[precommand]" # sudo
+  "18 21 $ZSH_HIGHLIGHT_STYLES[builtin]"    # echo
+  "23 25 $ZSH_HIGHLIGHT_STYLES[default]"    # foo
 )

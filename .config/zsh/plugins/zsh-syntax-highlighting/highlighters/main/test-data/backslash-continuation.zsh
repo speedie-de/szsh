@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # -------------------------------------------------------------------------------------------------
 # Copyright (c) 2015 zsh-syntax-highlighting contributors
 # All rights reserved.
@@ -31,5 +32,5 @@ PREBUFFER=$'echo \\\n'
 BUFFER='noglob'
 
 expected_region_highlight=(
-  "1 6 default" # 'noglob' highlighted as a string, not as a precomand
+  "0 6 none" # 'noglob' highlighted as a string, not as a precomand
 )
