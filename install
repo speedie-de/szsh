@@ -1,0 +1,13 @@
+#!/bin/sh
+echo 3
+sleep 1
+echo 2
+sleep 1
+echo 1
+sleep 1
+
+cd .config
+cp -r $HOME/.config/zsh /tmp/zsh-backup
+rm -rf $HOME/.config/zsh
+cp -r zsh $HOME/.config/
+echo "Installed."
