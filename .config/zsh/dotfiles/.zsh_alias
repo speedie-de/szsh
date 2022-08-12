@@ -57,3 +57,5 @@ alias untar='$PERM tar xpvf'
 alias unrar='$PERM unrar x'
 
 alias df='df -h'
+
+alias nezstream="mpv https://donut.gq/~nezbednik/stream/playlist.m3u8"
