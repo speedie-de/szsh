@@ -2,7 +2,7 @@
 
 export USER=$(whoami)
 export CPATH=/home/$USER/.local/bin:/home/$USER/Projects/scripts:/home/$USER/.config:/home/$USER/Scripts
-export EDITOR='vim'
+export EDITOR='nvim'
 export LANG="en_US.UTF-8"
 export PERM='doas'
 export PATH=$PATH:$CPATH

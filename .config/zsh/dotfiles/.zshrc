@@ -17,6 +17,8 @@ export SAVEHIST=$HISTSIZE
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 export XDG_DESKTOP_DIR="/dev/null"
 
+POWERLINE=false
+
 # Source other dotfiles
 source $ZDOTDIR/.zsh_export
 source $ZDOTDIR/.zsh_ps
@@ -26,8 +28,21 @@ source $ZDOTDIR/.zsh_alias
 source $ZPLUGINDIR/zsh-vi-mode/zsh-vi-mode.zsh
 source $ZPLUGINDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZPLUGINDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZPLUGINDIR/zsh-titles/zsh-titles.zsh
 
 #######################################################
+
+if [ "$POWERLINE" = "true" ]; then
+function _update_ps1()
+{
+    export PROMPT="$(~/.config/powerline/powerline-zsh.py $?)"
+}
+precmd()
+{
+    _update_ps1
+}
+fi
+
 cd && clear
 
 $FETCH

@@ -9,12 +9,18 @@ alias ls='$LIST -lah --color=auto --icons' # exa
 #alias ls='$LIST -lah --colors=auto' # ls
 alias ll='$LIST -lah | wc -l'
 
+# text editors
+alias vim="$EDITOR"
+alias nvim="$EDITOR"
+alias nano="$EDITOR"
+
 alias Q='exit'
 alias :q='exit'
 alias q='exit'
 alias ZZ='exit'
 alias ZQ='exit'
 alias :c='clear'
+alias vis='$HOME/.local/bin/vis'
 
 alias emerge="$PERM emerge"
 alias emerge-update="$PERM emerge --sync && $PERM emerge --deep --newuse --update --with-bdeps=y @world"
