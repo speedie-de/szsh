@@ -20,10 +20,9 @@ alias q='exit'
 alias ZZ='exit'
 alias ZQ='exit'
 alias :c='clear'
-alias vis='$HOME/.local/bin/vis'
 
 alias emerge="$PERM emerge"
-alias emerge-update="$PERM emerge --sync && $PERM emerge --deep --newuse --update --with-bdeps=y @world"
+alias emerge-update="$PERM emerge --sync && $PERM emerge --deep --newuse --update --with-bdeps=y --keep-going @world"
 
 alias rss='killall mpv ; killall newsboat ; newsboat'
 
@@ -31,8 +30,8 @@ alias rss='killall mpv ; killall newsboat ; newsboat'
 alias mkdir='mkdir -pv'
 
 # youtube-dl aliases
-alias mp3dl='$PERM youtube-dl -x --audio-format mp3 --prefer-ffmpeg'
-alias mp4dl='$PERM youtube-dl -f best --prefer-ffmpeg'
+alias mp3dl='youtube-dl -x --audio-format mp3 --prefer-ffmpeg'
+alias mp4dl='youtube-dl -f best --prefer-ffmpeg'
 
 # Config files
 alias urls='$EDITOR ~/.config/newsboat/urls'

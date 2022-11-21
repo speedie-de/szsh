@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/dotfiles/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # speedie's zsh configuration
 # https://github.com/speedie-de/szsh
 
@@ -16,8 +23,9 @@ export HISTFILE=$ZDOTDIR/history
 export SAVEHIST=$HISTSIZE
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 export XDG_DESKTOP_DIR="/dev/null"
+export ASSUME_NO_MOVING_GC_UNSAFE_RISK_IT_WITH=go1.18
 
-POWERLINE=false
+POWERLINE=true
 
 # Source other dotfiles
 source $ZDOTDIR/.zsh_export
@@ -33,16 +41,13 @@ source $ZPLUGINDIR/zsh-titles/zsh-titles.zsh
 #######################################################
 
 if [ "$POWERLINE" = "true" ]; then
-function _update_ps1()
-{
-    export PROMPT="$(~/.config/powerline/powerline-zsh.py $?)"
-}
-precmd()
-{
-    _update_ps1
-}
+    source $ZPLUGINDIR/zsh-powerline/powerlevel10k.zsh-theme
+    source $ZPLUGINDIR/zsh-powerline/zsh-powerline-options.zsh
 fi
 
 cd && clear
 
-$FETCH
+ulimit -c unlimited
+
+#$FETCH
+cat /home/anon/Documents/agnuheadterm-xterm.txt
